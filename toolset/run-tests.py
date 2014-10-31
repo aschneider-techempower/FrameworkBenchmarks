@@ -158,7 +158,7 @@ def main(argv=None):
     parser.add_argument('--sleep', type=int, default=60, help='the amount of time to sleep after starting each test to allow the server to start up.')
 
     # Misc Options
-    parser.add_argument('--parse', help='Parses the results of the given timestamp and merges that with the latest results')
+    parser.add_argument('--parse', default=None, help='Parses the results of the given timestamp and merges that with the latest results')
     parser.add_argument('-v', '--verbose', default=False, type=bool, help='Causes the configuration to print before any other commands are executed.')
     parser.set_defaults(**defaults) # Must do this after add, or each option's default will override the configuration file default
     args = parser.parse_args(remaining_argv)
