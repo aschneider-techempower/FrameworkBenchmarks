@@ -179,6 +179,9 @@ def main(argv=None):
     if args.verbose:
         print 'Configuration options: '
         pprint(vars(args))
+    benchmarker_arguments = vars(args)
+    if 'parse' not in benchmarker_arguments:
+        benchmarker_arguments['parse'] = None
 
     benchmarker = Benchmarker(vars(args))
 
