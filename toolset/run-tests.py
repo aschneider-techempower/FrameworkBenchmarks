@@ -183,7 +183,7 @@ def main(argv=None):
     if 'parse' not in benchmarker_arguments:
         benchmarker_arguments['parse'] = None
 
-    benchmarker = Benchmarker(vars(args))
+    benchmarker = Benchmarker(benchmarker_arguments)
 
     # Run the benchmarker in the specified mode
     #   Do not use benchmarker variables for these checks, 
