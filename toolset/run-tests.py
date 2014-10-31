@@ -185,13 +185,13 @@ def main(argv=None):
     # Run the benchmarker in the specified mode
     #   Do not use benchmarker variables for these checks, 
     #   they are either str or bool based on the python version
-    if args.list_tests:
+    if (type(args.list_test) is str and args.list_test.lower() == 'true') or (type(args.list_tests) is bool and args.list_tests):
       benchmarker.run_list_tests()
-    elif args.list_test_metadata:
+    elif (type(args.list_test_metadata) is str and args.list_test_metadata.lower() == 'true') or (type(args.list_test_metadata) is bool and args.list_test_metadata):
       benchmarker.run_list_test_metadata()
     elif args.parse != None:
       benchmarker.parse_timestamp()
-    elif not args.install_only:
+    elif not ((type(args.install_only) is str and args.install_only.lower() == 'true') or (type(args.install_only) is bool and args.install_only)):
       return benchmarker.run()
 
 if __name__ == "__main__":
